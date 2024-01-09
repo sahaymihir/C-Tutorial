@@ -1,5 +1,4 @@
 // To find the roots of a quadratic equation
-// It is still not showing incorrect roots
 
 #include<stdio.h>
 #include<math.h>
@@ -13,7 +12,7 @@ int main () {
     printf("Enter the constant: ");
     scanf("%f", &c);
     
-    d = (pow(b,2) - 2 * a * c);
+    d = (pow(b,2) - 4 * a * c); 
     re = (-b / (2 * a));
     im = (sqrt(fabs(d)))/(2 * a);
 
