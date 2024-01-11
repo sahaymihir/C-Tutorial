@@ -13,6 +13,7 @@ int main () {
     printf("Your choice: ");
     scanf("%d", &choose);
 
+    if (choose >=1 && choose <= 5){
     switch (choose) {
         case 1:
             int num1,num2;
@@ -85,7 +86,11 @@ int main () {
             break;
             
     }
-    } while (choose != 5);
+    }
+    else {
+        printf("Enter a valid number between 1-5 \n");
+    }
+    } while (choose > 4 && choose < 1 );
 
     return 0;
 }    
