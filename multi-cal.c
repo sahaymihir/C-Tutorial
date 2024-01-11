@@ -3,11 +3,13 @@
 
 int main () {
     int choose;
+    do {
     printf("Choose from the below programs: \n");
     printf("1. Sum of two numbers \n");
     printf("2. Find the greatest number \n");
     printf("3. Find roots of quadratic equation \n");
     printf("4. Check for eliglibity to vote \n");
+    printf("5. exit \n");
     printf("Your choice: ");
     scanf("%d", &choose);
 
@@ -83,6 +85,7 @@ int main () {
             break;
             
     }
+    } while (choose != 5);
 
     return 0;
 }    
