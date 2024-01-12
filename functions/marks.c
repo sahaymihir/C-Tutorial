@@ -3,16 +3,16 @@
 void marks();
 
 int main() {
+    float marks;
+    printf("Enter your marks: ");
+    scanf("%f", &marks);
     marks();
     return 0;
 }
 
 // defined marks function
 
-void marks () {
-    float marks;
-    printf("Enter your marks :");
-    scanf("%f", &marks);
+void marks (float marks) {
     if (marks > 90 && marks <= 100) {
         printf("You got A+ grade \n");
     }
