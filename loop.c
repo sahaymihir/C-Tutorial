@@ -20,7 +20,7 @@
 
 } */
 
-// ++i (pre increment operator) 
+// ++i (pre increment operator)
 // i++ (post increment operator)
 
 /* 3. int main () {
@@ -39,7 +39,7 @@
     int i,n;
     printf("Enter the number: ");
     scanf("%d", &n);
-    
+
     do {
         printf("%d \n", i);
         i++;
@@ -108,4 +108,10 @@
     return 0;
 } */
 
+int main() {
+    for (int i = 1; ; i++) {
+        printf("%d", i);
+    }
+    return 0;
+}
 
