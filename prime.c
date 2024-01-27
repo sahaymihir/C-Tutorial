@@ -3,47 +3,29 @@
 
 int main()
 {
-    int n, i, a;
+    int num;
 
     printf("Enter a number: ");
-    scanf("%d", &n);
+    scanf("%d", &num);
 
-    if (n == 1 || n == 0)
+    int i = 2, count = 0;
+    while (i <= sqrt(num))
     {
-        printf("%d is neither a prime nor a composite number \n", n);
+        if ((num % i) == 0)
+        {
+            count++;
+            break;
+        }
+        i++;
     }
-    else if (n == 2)
+
+    if (count == 0)
     {
-        printf("This is a prime number \n");
-    }
-    else if (n < 0)
-    {
-        printf("Enter a positive integer \n");
+        printf("%d is a prime number \n", num);
     }
     else
     {
-        for (i = 2; i < sqrt(n); i++)
-        {
-            a = n % i;
-
-            if (a == 0)
-            {
-                break;
-                a = 0;
-            }
-        }
-
-        switch (a)
-        {
-
-        case 0:
-            printf("This is not a prime number \n");
-            break;
-
-        default:
-            printf("This is a prime number \n");
-            break;
-        }
+        printf("%d is a composite \n", num);
     }
 
     return 0;
