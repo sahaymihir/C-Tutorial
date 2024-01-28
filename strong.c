@@ -22,7 +22,6 @@ int main()
         sum = sum + digit;
         n /= 10;
     }
-    printf("%d \n",sum);
     if (orignal == sum)
     {
         printf("This is a strong number \n");
