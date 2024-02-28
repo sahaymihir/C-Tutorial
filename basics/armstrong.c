@@ -3,8 +3,7 @@
 
 int main()
 {
-    int n, orignal, sum = 0;
-    double c, digit;
+    int n, orignal, sum = 0, digit;
 
     printf("Enter a number: ");
     scanf("%d", &n);
@@ -13,19 +12,13 @@ int main()
 
     while (n != 0)
     {
-        c++;
+        digit = n % 10;
+        digit = pow(digit, 3);
+        sum += digit;
         n /= 10;
     }
 
-    while (n != 0)
-    {
-        digit = n % 10;
-        digit = pow(digit, c);
-        printf("%d \t", digit);
-        sum += digit;
-        printf("%d \t", sum);
-
-        if (orignal == sum)
+    if (orignal == sum)
         {
             printf("This number is armstrong number \n");
         }
@@ -33,8 +26,6 @@ int main()
         {
             printf("This is not a armstrong number \n");
         }
-        n /= 10;
-    }
 
     return 0;
 }

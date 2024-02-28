@@ -11,14 +11,12 @@ int main()
     printf("Enter upper limit: ");
     scanf("%d", &upper);
 
-    num = lower;
-
-    while (num <= upper)
+    while (lower <= upper)
     {
         int i = 2, count = 0;
-        while (i <= sqrt(num))
+        while (i <= sqrt(lower))
         {
-            if ((num % i) == 0)
+            if ((lower % i) == 0)
             {
                 count++;
                 break;
@@ -28,9 +26,9 @@ int main()
 
         if (count == 0)
         {
-            printf("%d \t", num);
+            printf("%d \t", lower);
         }
-        num++;
+        lower++;
     }
     return 0;
 }
