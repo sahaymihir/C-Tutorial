@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <curses.h>
 
 int main () {
     int j;
@@ -14,5 +12,6 @@ int main () {
 
     printf("\nYour password is: ");
     puts(str);
+
     return 0;
 }
