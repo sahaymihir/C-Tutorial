@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int prime(int a)
+int Prime(int a)
 {
     int prime = 1;
 
@@ -12,10 +12,11 @@ int prime(int a)
             prime = 0;
         }
     }
+
     return prime;
 }
 
-int prfectsquare(int a[100][100], int m, int n)
+void PrimeDetector(int a[100][100], int m, int n)
 {
     static int sum = 0;
     int num, p1, b[100];
@@ -24,7 +25,7 @@ int prfectsquare(int a[100][100], int m, int n)
         for (int j = 0; j < n; j++)
         {
             num = a[i][j];
-            if (prime(num))
+            if (Prime(num))
             {
                 a[i][j] = 1;
             }
@@ -34,8 +35,6 @@ int prfectsquare(int a[100][100], int m, int n)
             }
         }
     }
-
-    return sum;
 }
 
 int main()
@@ -64,7 +63,7 @@ int main()
         printf("\n");
     }
 
-    prfectsquare(a, m, n);
+    PrimeDetector(a, m, n);
 
     printf("\nThe new Matrix is: \n");
     for (int i = 0; i < m; i++)
