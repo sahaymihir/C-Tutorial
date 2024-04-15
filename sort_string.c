@@ -14,21 +14,22 @@ void array_sorting(char a[][100], int m) {
     char temp[100];
     for (int i = 0; i < m ; i++) {
         for (int j = 0; j < m-1-i; j++) {
-            if (strcmp(a[i], a[j]) > 0) {
-                strcpy(temp, a[i]);
-                strcpy(a[i], a[j]);
-                strcpy(a[j], temp);
+            if (strcmp(a[j], a[j+1]) > 0) {
+                strcpy(temp, a[j]);
+                strcpy(a[j], a[j+1]);
+                strcpy(a[j+1], temp);
             }
         }
     }
 }
+
 void sorting (char a[]) {
     char temp;
 
     for (int i = 0;i < strlen(a);i++) {
         for (int j = 0; j < strlen(a) - 1 - i; j++)
         {
-            if (a[j] > a[j +1]) {
+            if (a[j] < a[j +1]) {
                 temp = a [j];
                 a[j] = a[j+1];
                 a[j+1] =temp;
@@ -59,12 +60,12 @@ int main()
         capital(a[i]);
     }
 
-    for (int i = 0; i < m; i++)
-    {
-        sorting(a[i]);
-    }
+    // for (int i = 0; i < m; i++)
+    // {
+    //     sorting(a[i]);
+    // }
 
-    //array_sorting(a,m);
+    array_sorting(a,m);
 
     printf("The strings are: \n");
     for (int i = 0; i <= m; i++)
