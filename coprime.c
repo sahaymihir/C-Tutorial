@@ -1,29 +1,27 @@
-#include<stdio.h>
-#include<math.h>
-
 #include <stdio.h>
 
-int areCoprime(int a, int b) {
-    int min = a < b ? a : b;
-    for (int i = min; i > 1; i--) {
-        if (a % i == 0 && b % i == 0) {
-            return 1;
-        }
-    }
-    return 0;
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
 }
 
-void storeCoprime(int arr1[], int arr2[], int n, int coprimePairs[][2], int *numPairs) {
-    *numPairs = 0;
+int areCoprime(int a, int b) {
+    return gcd(a, b) == 1 ? 1 : 0;
+}
+
+int storeCoprime(int arr1[], int arr2[], int n, int coprimePairs[][2]) {
+    int numPairs = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            if (areCoprime(arr1[i], arr2[j]) == 0) {
-                coprimePairs[*numPairs][0] = arr1[i];
-                coprimePairs[*numPairs][1] = arr2[j];
-                (*numPairs)++;
+            if (areCoprime(arr1[i], arr2[j]) == 1) {
+                coprimePairs[numPairs][0] = arr1[i];
+                coprimePairs[numPairs][1] = arr2[j];
+                numPairs++;
             }
         }
     }
+    return numPairs;
 }
 
 int main() {
@@ -41,8 +39,8 @@ int main() {
         scanf("%d", &arr2[i]);
     }
 
-    int coprimePairs[n*n][2], numPairs;
-    storeCoprime(arr1, arr2, n, coprimePairs, &numPairs);
+    int coprimePairs[n*n][2];
+    int numPairs = storeCoprime(arr1, arr2, n, coprimePairs);
 
     printf("Number of coprime pairs: %d\n", numPairs);
     for (int i = 0; i < numPairs; i++) {
