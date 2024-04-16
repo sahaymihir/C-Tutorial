@@ -4,13 +4,13 @@
 #include <stdio.h>
 
 int areCoprime(int a, int b) {
-    int temp;
-    while (b != 0) {
-        temp = b;
-        b = a % b;
-        a = temp;
+    int min = a < b ? a : b;
+    for (int i = min; i > 1; i--) {
+        if (a % i == 0 && b % i == 0) {
+            return 1;
+        }
     }
-    return a == 1 ? 0 : 1;
+    return 0;
 }
 
 void storeCoprime(int arr1[], int arr2[], int n, int coprimePairs[][2], int *numPairs) {
